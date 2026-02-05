@@ -1,0 +1,40 @@
+main{height: 100vh;width: 100vw;}
+.backgroundDiv {height: 100%;width: 100%;background-repeat: no-repeat;background-size: cover;}
+.headText,.juiceName {height: 80px;font-size: 50px;color: white;text-align: center;
+   margin: 0;flex: 1.3;overflow: hidden;margin: 0px;}
+   .headText{ animation: headani 1.2s 1 forwards;}
+.juiceImg { height: 800px;margin-left:30px ;animation: juice 1s 1  forwards;margin-top: -100px;}
+@keyframes juice {
+    0%{transform: rotateZ(0deg);}
+    100%{transform: rotateZ(30deg);}
+    
+}
+.themeLine{text-align: center;font-weight: 500;color: white;animation: themeani 1 2s forwards;}
+.themeLineDiv{display: flex;flex-direction: column;align-items: center;animation: themeani 1s 1 forwards;}
+.seeMore{width: 100px;height: 40px;border: none;border-radius: 50px;background-color: rgb(241, 93, 35);color: white;animation: themeani 2s 
+     1 forwards;}
+@keyframes themeani {
+    0%{margin-top: 20px;opacity: 0;}
+    
+    100%{margin-top: 0px;opacity: 1;}
+    
+}
+@keyframes headani {
+    0%{opacity: 0;margin-left: -200px;}
+    100%{opacity: 1;margin-left: 0px;}
+    
+}
+
+.headTextDiv{display: flex;flex-direction: row;}
+.juiceNameDiv{overflow: hidden;flex: 1;position: relative;}
+.juiceName {position: absolute;animation: juiceNameani 2s 1 forwards ;color: black;}
+@keyframes juiceNameani {
+    0%{bottom: -100px;}
+    100%{bottom: 0px;}
+}
+.mainNav{width: 40vw;height: 5vh;bottom: 10px;position: fixed;display: flex;flex-direction: row;justify-content: space-between;left: 10px;background-color: rgba(255,255,255,0.2);}
+.juiceImgDiv{width: 100%;overflow: hidden;}
+.juiceNavImg{width: 100%;height: 100%;}
+
+.juiceNav{opacity: 0.5;}
+.selected{opacity: 1 ;margin-top: -60px;}

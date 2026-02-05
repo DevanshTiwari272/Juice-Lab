@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 
 import './index.css'
-import Home from './App.jsx'
-
+import Home from './Home.jsx'
+const router = createBrowserRouter([{path:'/',element:<Home  />},{path:':juice',element:<Home  />}])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Home />
+   <RouterProvider router={router}  />
   </StrictMode>,
 )
