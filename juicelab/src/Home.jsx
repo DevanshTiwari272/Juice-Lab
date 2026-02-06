@@ -16,29 +16,29 @@ else if(currentJuice==='red'){return redDetail}
 else{return orangeDetail }
 }
 function Home() {
-  const {juice}=useParams()
-  console.log(juice)
+  let {juice}=useParams()
+  if(!juice){juice='orange'}
   
   const juiceDetail = juiceDetails(juice)
   return (<>
   <div key={juice} className={'backgroundDiv '} style={{backgroundImage:`url(${juiceDetail.backgroundImage})`}}>
      <div className='headTextDiv'>
-    <h3 className='headText'>Juise lab  </h3><div className='juiceNameDiv'>
+    <h3 className='headText'>Juice lab  </h3><div className='juiceNameDiv'>
     <p className='juiceName'>{juiceDetail.name}</p>
     </div>
     </div>
     <div className='juiceImgDiv'>
     <img className='juiceImg' src={juiceDetail.juiceImg} alt="" />
-   
-   </div>
     <div className='themeLineDiv'>
     <p className='themeLine'>100% freshness and nutrients to keep you going </p>
-     <button className='seeMore'>See more</button>
+     <button className={`seeMore ${juice}`} >See more</button>
     </div>
+   </div>
+   
     <nav className='mainNav'>
       
      <Link to='/red'> <div className= {(juice==='red')?'juiceNav selected':'juiceNav' } ><img className='juiceNavImg' src={redCan}></img></div></Link>
-    <Link to='/'>  <div className={(juice==='orange')?' juiceNav selected  ':'juiceNav'} ><img className='juiceNavImg' src={orangeGlass}></img></div></Link>
+    <Link to='/'>  <div className={(juice==="orange")?' juiceNav selected  ':'juiceNav'} ><img className='juiceNavImg' src={orangeGlass}></img></div></Link>
      <Link to='/green'> <div className={(juice==='green')?'juiceNav selected':'juiceNav'} ><img className='juiceNavImg' src={greenCan}></img></div></Link>
     </nav>
   </div>

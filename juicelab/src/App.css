@@ -1,40 +1,52 @@
 main{height: 100vh;width: 100vw;}
 .backgroundDiv {height: 100%;width: 100%;background-repeat: no-repeat;background-size: cover;}
-.headText,.juiceName {height: 80px;font-size: 50px;color: white;text-align: center;
-   margin: 0;flex: 1.3;overflow: hidden;margin: 0px;}
-   .headText{ animation: headani 1.2s 1 forwards;}
-.juiceImg { height: 800px;margin-left:30px ;animation: juice 1s 1  forwards;margin-top: -100px;}
+.headText,.juiceName {height: 80px;font-size: 50px;color: white;overflow: hidden;margin: 0px;}
+   .headText{ animation: headani 2s 1 forwards;}
+.juiceImg { height: 100%;margin-left:30px ;animation: juice 2s 1  forwards;margin-top: -100px;object-fit: contain;width: 100%;}
 @keyframes juice {
     0%{transform: rotateZ(0deg);}
     100%{transform: rotateZ(30deg);}
     
 }
 .themeLine{text-align: center;font-weight: 500;color: white;animation: themeani 1 2s forwards;}
-.themeLineDiv{display: flex;flex-direction: column;align-items: center;animation: themeani 1s 1 forwards;}
-.seeMore{width: 100px;height: 40px;border: none;border-radius: 50px;background-color: rgb(241, 93, 35);color: white;animation: themeani 2s 
+.themeLineDiv{display: flex;flex-direction: column;align-items: center;animation: themeani 2s 1 forwards;}
+.seeMore{width: 100px;height: 40px;border: none;border-radius: 50px;color: white;animation: themeani 2s 
      1 forwards;}
 @keyframes themeani {
-    0%{margin-top: 20px;opacity: 0;}
+    0%{transform: translateY(20px);opacity: 0;}
     
-    100%{margin-top: 0px;opacity: 1;}
+    100%{transform: translateY(0px);opacity: 1;}
     
 }
 @keyframes headani {
-    0%{opacity: 0;margin-left: -200px;}
-    100%{opacity: 1;margin-left: 0px;}
+    0%{opacity: 0;transform: translateX(-200px);}
+    100%{opacity: 1;transform: translateX(0px);}
     
 }
 
-.headTextDiv{display: flex;flex-direction: row;}
-.juiceNameDiv{overflow: hidden;flex: 1;position: relative;}
-.juiceName {position: absolute;animation: juiceNameani 2s 1 forwards ;color: black;}
+.headTextDiv{display: flex;flex-direction: row;justify-content: center;}
+.juiceNameDiv{overflow: hidden;}
+.juiceName {animation: juiceNameani 2s 1 forwards ;color: black;}
 @keyframes juiceNameani {
-    0%{bottom: -100px;}
-    100%{bottom: 0px;}
+    0%{transform: translateY(100px);}
+    100%{transform: translateY(0px);}
 }
-.mainNav{width: 40vw;height: 5vh;bottom: 10px;position: fixed;display: flex;flex-direction: row;justify-content: space-between;left: 10px;background-color: rgba(255,255,255,0.2);}
-.juiceImgDiv{width: 100%;overflow: hidden;}
+.mainNav{width: 40vw;height: 5vh;bottom: 10px;position: fixed;display: flex;flex-direction: row;justify-content: space-between;left: 10px;gap: 2px;align-items: center;}
+.juiceImgDiv{width: 100%;overflow: hidden;height: 80vh;display: flex;align-items: center;justify-content: center;flex-direction: column;}
 .juiceNavImg{width: 100%;height: 100%;}
 
-.juiceNav{opacity: 0.5;}
-.selected{opacity: 1 ;margin-top: -60px;}
+.juiceNav{opacity: 0.5;background-color: rgba(255,255,255,0.2);}
+.selected{opacity: 1 ;animation: navani 2s 1 forwards;}
+@keyframes navani {
+    0%{transform: translateY(0px);}
+    100%{transform: translateY(-30px);}
+    
+}
+.orange{background: linear-gradient(0deg ,rgb(255, 94, 0),rgb(163, 17, 17));}
+.red{background: linear-gradient(25deg,red,rgb(195, 72, 66));}
+.green{background: linear-gradient(35deg,rgb(6, 170, 6),rgb(62, 228, 62));}
+@media only screen and (min-width:800px) {
+    .mainNav{height: 70px;width: 300px;bottom: 30px;}
+    .juiceNav{}
+    
+}
